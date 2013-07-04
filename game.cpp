@@ -19,28 +19,28 @@ void Player::deal(Player &p1, Player &p2, Player &p3, Player &p4)
               int giveToPlayer = rand() % 4;
               switch (giveToPlayer) 
               {  case 0:
-                      if (!p1.isFull) 
+                      if (!p1.isFull()) 
                       {  Card c(i,j);
                          p1.add(c);  } 
                       else 
                       {  again = 1;  }
                  break;
                  case 1:
-                      if (!p2.isFull) 
+                      if (!p2.isFull()) 
                       {  Card c(i,j);
                          p2.add(c);  } 
                       else 
                       {  again = 1;  }
                  break;
                  case 2:
-                      if (!p3.isFull) 
+                      if (!p3.isFull()) 
                       {  Card c(i,j);
                          p3.add(c);  } 
                       else 
                       {  again = 1;  }
                       break;
                  case 3:
-                      if (!p4.isFull) 
+                      if (!p4.isFull()) 
                       {  Card c(i,j);
                          p4.add(c);  } 
                       else 
