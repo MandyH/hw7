@@ -9,11 +9,11 @@ class Card
    public:
     Card(int &suit, int &face); 
     int suit();
-    int face(); }
+    int face(); };
 
 class Table 
 {  private:
-    Card _deck[4];  }
+    Card _deck[4];  };
 
 class Player 
 {  private:
@@ -25,6 +25,6 @@ class Player
     void add(Card &c);
     bool isFull(); 
     void deal(Player &p1, Player &p2, Player &p3, Player &p4);
-    friend ostream& operator<<(ostream&out, const Player print);  }
+    friend ostream& operator<<(ostream&out, const Player print);  };
 
 
