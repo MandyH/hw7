@@ -3,9 +3,9 @@
 
 using namespace std;
 
-Card::Card(int suit, int face):_suit(suit),_face(face) {}
+Card::Card(int suit, int face):_suit(suit),_face(face) {}  //default constructor
 
-Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}
+Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}  //copy constructor
 
 int Card::suit()
 {   return _suit;  }
@@ -18,7 +18,7 @@ Player::Player() {
     _onHold = 0;
     for (int i=0; i<13; i++)
         _deck[i] = Card();
-}
+}  //default constructor
 
 void Player::deal(Player &p1, Player &p2, Player &p3, Player &p4) {
     for (int i=0; i<4; i++) {
