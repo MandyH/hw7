@@ -3,6 +3,8 @@
 
 using namespace std;
 
+Card::Card(int &suit, int &face):_suit(suit),_face(face) {}
+
 int Card::suit() 
 {   return this->_suit;  }
 
