@@ -3,24 +3,26 @@
 
 using namespace std;
 
-Card::Card(int suit, int face):_suit(suit),_face(face) {}  //default constructor
+Card::Card(int suit, int face):_suit(suit),_face(face) {}
 
-Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}  //copy constructor
+Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}
 
-int Card::suit()
-{   return _suit;  }
+int Card::suit() {
+    return _suit;
+}
 
-int Card::face()
-{   return _face;  }
+int Card::face() {
+    return _face;
+}
 
 
 Player::Player() {
     _onHold = 0;
     for (int i=0; i<13; i++)
         _deck[i] = Card();
-}  //default constructor
+}
 
-void Player::deal(Player &p1, Player &p2, Player &p3, Player &p4) {
+void deal(Player &p1, Player &p2, Player &p3, Player &p4) {
     for (int i=0; i<4; i++) {
         for (int j=0; j<13; j++) {
             int again = 0;
@@ -31,32 +33,39 @@ void Player::deal(Player &p1, Player &p2, Player &p3, Player &p4) {
                         if (!p1.isFull()) {
                             Card c(i,j);
                             p1.add(c);
-                        } else {
-                            again = 1;
+                            break;
                         }
-                        break;
                     case 1:
                         if (!p2.isFull()) {
                             Card c(i,j);
                             p2.add(c);
-                        } else {
-                            again = 1;
+                            break;
                         }
-                        break;
                     case 2:
                         if (!p3.isFull()) {
                             Card c(i,j);
                             p3.add(c);
-                        } else {
-                            again = 1;
+                            break;
                         }
-                        break;
                     case 3:
                         if (!p4.isFull()) {
                             Card c(i,j);
                             p4.add(c);
-                        } else {
-                            again = 1;
+                            break;
+                        }
+                    default:
+                        if (!p1.isFull()) {
+                            Card c(i,j);
+                            p1.add(c);
+                        } else if (!p2.isFull()) {
+                            Card c(i,j);
+                            p2.add(c);
+                        } else if (!p3.isFull()) {
+                            Card c(i,j);
+                            p3.add(c);
+                        } else if (!p4.isFull()) {
+                            Card c(i,j);
+                            p4.add(c);
                         }
                         break;
                 }
@@ -80,13 +89,13 @@ Card& Player::operator[] (int i) {
 }
 
 ostream& operator<<(ostream&out, Card &c) {
-    out << c.suit() << c.face();
+    out << "Suit: " << c.suit() << " Face: " << c.face();
     return out;
 }
 
 ostream& operator<<(ostream&out, Player &p) {
     for (int i=0; i<13; i++) {
-        out << p[i] << endl;
+        out << p[i] << ", ";
     }
     return out;
 }
