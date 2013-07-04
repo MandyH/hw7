@@ -7,7 +7,7 @@ class Card
     int _suit;
     int _face;
    public:
-    Card(int &suit, int &face):_suit(suit),_face(face); 
+    Card(int &suit, int &face); 
     int suit();
     int face(); }
 
