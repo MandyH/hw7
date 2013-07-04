@@ -14,8 +14,8 @@ public:
     Card(Card &c);
     int suit();
     int face();
-    //friend ostream& operator<<(ostream&out, const Card &c);
 };
+ostream& operator<<(ostream&out, Card &c);
 
 class Table {
 private:
@@ -31,9 +31,10 @@ public:
     bool Check();
     void add(Card &c);
     bool isFull();
-    void deal(Player &p1, Player &p2, Player &p3, Player &p4);
     Card& operator[] (int);
-    //friend ostream& operator<<(ostream&out, const Player &p);
 };
+ostream& operator<<(ostream&out, Player &p);
+
+void deal(Player &p1, Player &p2, Player &p3, Player &p4);
 
 #endif
