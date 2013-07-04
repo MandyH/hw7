@@ -30,6 +30,7 @@ public:
     Player();
     bool Check();
     void add(Card &c);
+    void remove(bool Check);
     bool isFull();
     Card& operator[] (int);
 };
