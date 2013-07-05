@@ -5,6 +5,8 @@
 
 using namespace std;
 
+enum Suit{Club, Diamond, Heart, Spade};
+
 class Card {
 private:
     int _suit;
