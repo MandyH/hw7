@@ -3,9 +3,9 @@
 
 using namespace std;
 
-Card::Card(int suit, int face):_suit(suit),_face(face) {}
+Card::Card(int suit, int face):_suit(suit),_face(face) {}  //default constructor
 
-Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}
+Card::Card(Card &c):_suit(c.suit()),_face(c.face()) {}  //copy constructor
 
 int Card::suit() {
     return _suit;
